@@ -1,0 +1,39 @@
+{
+  "dependencies": {
+    "@octokit/app": "^14.0.1",
+    "@octokit/auth-app": "^6.0.1",
+    "@octokit/core": "^5.0.1",
+    "@types/axios": "^0.14.0",
+    "@types/cors": "^2.8.15",
+    "@types/express": "^4.17.20",
+    "@types/helmet": "^4.0.0",
+    "axios": "^1.6.0",
+    "body-parser": "^1.20.2",
+    "chalk": "^5.3.0",
+    "colorette": "^2.0.20",
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "express-session": "^1.17.3",
+    "fs": "^0.0.1-security",
+    "helmet": "^7.0.0",
+    "mongoose": "^7.6.3",
+    "prop-types": "^15.8.1",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.2.2"
+  },
+  "name": "production-backend",
+  "version": "1.0.0",
+  "main": "./prod/index.js",
+  "scripts": {
+    "test": "npx ts-node ./src/index.ts",
+    "build:github": "node ./prod/prod-core/commit.js",
+    "build:tsc": "npx tsc",
+    "build:all": "npm run build:tsc && npm run build:github && node ./prod/",
+    "build:dev": "npm run build:tsc && node ./prod/",
+    "build:railway": "npm run build:tsc && node ./prod/"
+  },
+  "keywords": [],
+  "author": "Nego, https://github.com/kardespro",
+  "license": "ISC",
+  "description": "Typescript Express Backend Example"
+}
